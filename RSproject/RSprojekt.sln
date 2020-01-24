@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RSprojekt", "RSprojekt\RSprojekt.csproj", "{B5069A6D-7F05-4ED2-90AE-7EB997A2020C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{97782CC6-8F48-4A5C-BED3-345B6C468EF9} = {97782CC6-8F48-4A5C-BED3-345B6C468EF9}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebKarta", "WebKarta\WebKarta.csproj", "{97782CC6-8F48-4A5C-BED3-345B6C468EF9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B5069A6D-7F05-4ED2-90AE-7EB997A2020C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5069A6D-7F05-4ED2-90AE-7EB997A2020C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5069A6D-7F05-4ED2-90AE-7EB997A2020C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5069A6D-7F05-4ED2-90AE-7EB997A2020C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97782CC6-8F48-4A5C-BED3-345B6C468EF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97782CC6-8F48-4A5C-BED3-345B6C468EF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97782CC6-8F48-4A5C-BED3-345B6C468EF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97782CC6-8F48-4A5C-BED3-345B6C468EF9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

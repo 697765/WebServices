@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="DohvatiLokacijuKlijenta">
+        <s:complexType />
+      </s:element>
+      <s:element name="DohvatiLokacijuKlijentaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DohvatiLokacijuKlijentaResult" type="tns:ArrayOfDouble" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDouble">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="double" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DohvatiAktivnosti">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="radijus" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="aktivnost" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DohvatiAktivnostiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DohvatiAktivnostiResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DohvatiSlikeAktivnosti">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="response" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aktivnost" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DohvatiSlikeAktivnostiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DohvatiSlikeAktivnostiResult" type="tns:ArrayOfBitmap" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfBitmap">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Bitmap" nillable="true" type="tns:Bitmap" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Bitmap">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Image" />
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Image" abstract="true">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:MarshalByRefObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Tag" />
+              <s:element minOccurs="0" maxOccurs="1" name="Palette" type="tns:ColorPalette" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="MarshalByRefObject" abstract="true" />
+      <s:complexType name="ColorPalette" />
+      <s:element name="DohvatiLokacijeAktivnosti">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="response" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DohvatiLokacijeAktivnostiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DohvatiLokacijeAktivnostiResult" type="tns:ArrayOfDouble" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="DohvatiLokacijuKlijentaSoapIn">
+    <wsdl:part name="parameters" element="tns:DohvatiLokacijuKlijenta" />
+  </wsdl:message>
+  <wsdl:message name="DohvatiLokacijuKlijentaSoapOut">
+    <wsdl:part name="parameters" element="tns:DohvatiLokacijuKlijentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="DohvatiAktivnostiSoapIn">
+    <wsdl:part name="parameters" element="tns:DohvatiAktivnosti" />
+  </wsdl:message>
+  <wsdl:message name="DohvatiAktivnostiSoapOut">
+    <wsdl:part name="parameters" element="tns:DohvatiAktivnostiResponse" />
+  </wsdl:message>
+  <wsdl:message name="DohvatiSlikeAktivnostiSoapIn">
+    <wsdl:part name="parameters" element="tns:DohvatiSlikeAktivnosti" />
+  </wsdl:message>
+  <wsdl:message name="DohvatiSlikeAktivnostiSoapOut">
+    <wsdl:part name="parameters" element="tns:DohvatiSlikeAktivnostiResponse" />
+  </wsdl:message>
+  <wsdl:message name="DohvatiLokacijeAktivnostiSoapIn">
+    <wsdl:part name="parameters" element="tns:DohvatiLokacijeAktivnosti" />
+  </wsdl:message>
+  <wsdl:message name="DohvatiLokacijeAktivnostiSoapOut">
+    <wsdl:part name="parameters" element="tns:DohvatiLokacijeAktivnostiResponse" />
+  </wsdl:message>
+  <wsdl:portType name="KartaSoap">
+    <wsdl:operation name="DohvatiLokacijuKlijenta">
+      <wsdl:input message="tns:DohvatiLokacijuKlijentaSoapIn" />
+      <wsdl:output message="tns:DohvatiLokacijuKlijentaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiAktivnosti">
+      <wsdl:input message="tns:DohvatiAktivnostiSoapIn" />
+      <wsdl:output message="tns:DohvatiAktivnostiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiSlikeAktivnosti">
+      <wsdl:input message="tns:DohvatiSlikeAktivnostiSoapIn" />
+      <wsdl:output message="tns:DohvatiSlikeAktivnostiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiLokacijeAktivnosti">
+      <wsdl:input message="tns:DohvatiLokacijeAktivnostiSoapIn" />
+      <wsdl:output message="tns:DohvatiLokacijeAktivnostiSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="KartaSoap" type="tns:KartaSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DohvatiLokacijuKlijenta">
+      <soap:operation soapAction="http://tempuri.org/DohvatiLokacijuKlijenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiAktivnosti">
+      <soap:operation soapAction="http://tempuri.org/DohvatiAktivnosti" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiSlikeAktivnosti">
+      <soap:operation soapAction="http://tempuri.org/DohvatiSlikeAktivnosti" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiLokacijeAktivnosti">
+      <soap:operation soapAction="http://tempuri.org/DohvatiLokacijeAktivnosti" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="KartaSoap12" type="tns:KartaSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DohvatiLokacijuKlijenta">
+      <soap12:operation soapAction="http://tempuri.org/DohvatiLokacijuKlijenta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiAktivnosti">
+      <soap12:operation soapAction="http://tempuri.org/DohvatiAktivnosti" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiSlikeAktivnosti">
+      <soap12:operation soapAction="http://tempuri.org/DohvatiSlikeAktivnosti" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiLokacijeAktivnosti">
+      <soap12:operation soapAction="http://tempuri.org/DohvatiLokacijeAktivnosti" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Karta">
+    <wsdl:port name="KartaSoap" binding="tns:KartaSoap">
+      <soap:address location="http://localhost:50295/Karta.asmx" />
+    </wsdl:port>
+    <wsdl:port name="KartaSoap12" binding="tns:KartaSoap12">
+      <soap12:address location="http://localhost:50295/Karta.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
